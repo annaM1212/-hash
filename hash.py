@@ -4,7 +4,6 @@ from tkinter import messagebox
 def xor(a, b):
     return a ^ b
 
-
 def hash_function(message):
     h = 0xFFFFFFFFFFFFFFFF 
     block_size = 8 
@@ -27,7 +26,6 @@ def on_hash_button_click():
     output_text.delete(1.0, tk.END)
     output_text.insert(tk.END, hashed_message)
 
-
 def on_verify_button_click():
     message = input_text.get("1.0", "end-1c").strip()
     hashed_message = output_text.get("1.0", tk.END).strip()
@@ -41,11 +39,9 @@ def on_verify_button_click():
     else:
         messagebox.showerror("Ошибка", "Хеш неверный!")
 
-
 root = tk.Tk()
 root.title("Хэш-функция с проверкой")
 root.geometry("400x350")
-
 
 input_text = tk.Text(root, height=5, width=40)
 input_text.pack(pady=10)
@@ -55,7 +51,6 @@ hash_button.pack(pady=5)
 
 output_text = tk.Text(root, height=2, width=40)
 output_text.pack(pady=10)
-
 
 verify_button = tk.Button(root, text="Проверить хэш", command=on_verify_button_click)
 verify_button.pack(pady=10)
